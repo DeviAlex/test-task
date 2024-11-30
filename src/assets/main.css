@@ -13,8 +13,24 @@ body {
 
 .page {
   height: calc(100% - 80px);
-  place-items: center;
+  place-items: start;
   display: flex;
   margin: auto;
   width: fit-content;
+}
+
+.weather-status {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  transition: opacity 0.1s;  
+  opacity: 1;
+  margin-top: 200px;
+}
+
+.wrapper.loading {
+  transition: opacity 0.1s;  
+  opacity: 0;  
 }

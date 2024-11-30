@@ -65,18 +65,3 @@ onMounted(() => {
     </div>
   </main>
 </template>
-
-<style lang="scss" scoped>
-.weather-status {
-  display: flex;
-  align-items: center;
-}
-.wrapper {
-  transition: opacity 0.1s;  
-  opacity: 1;  
-}
-.wrapper.loading {
-  transition: opacity 0.1s;  
-  opacity: 0;  
-}
-</style>

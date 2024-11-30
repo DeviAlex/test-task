@@ -76,13 +76,15 @@ onMounted(() => {
         </div>
         <h2>{{ Math.round(weatherData.main.temp_min)}}°C/{{ Math.round(weatherData.main.temp_max)}}°C</h2>
         <transition name="slide-fade">
-          <div v-if="show === index" class="weather-info">
-            <h2>{{ getWeekDate(index) }}</h2>
-            <span>Ощущается как {{ weatherData.main.feels_like }}</span>
-            <span>Атмосферное давление {{ weatherData.main.pressure }} hPa</span>
-            <span>Влажность {{ weatherData.main.humidity }}</span>
-            <span>Видимость {{ Math.round(weatherData.visibility/1000) }} Км</span>
-            <span>Скорость ветра {{ weatherData.wind.speed }} м/с</span>
+          <div v-if="show === index" class="full-width">
+            <div class="weather-info">
+              <h2>{{ getWeekDate(index) }}</h2>
+              <span>Ощущается как {{ weatherData.main.feels_like }}</span>
+              <span>Атмосферное давление {{ weatherData.main.pressure }} hPa</span>
+              <span>Влажность {{ weatherData.main.humidity }}</span>
+              <span>Видимость {{ Math.round(weatherData.visibility/1000) }} Км</span>
+              <span>Скорость ветра {{ weatherData.wind.speed }} м/с</span>
+            </div>
           </div>
         </transition>
       </WeatherCard>
@@ -97,38 +99,25 @@ onMounted(() => {
   padding: 20px 0;
 }
 
-.weather-status {
-  display: flex;
-  align-items: center;
-}
-
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  transition: opacity 0.1s;
-  opacity: 1;  
-}
-
-.wrapper.loading {
-  transition: opacity 0.1s;  
-  opacity: 0;  
+  position: relative;
 }
 
 .weather-info {
-  position: absolute;
-    top: 64%;
-    left: 43%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--el-border-color-hover);
-    border-radius: 5px;
-    padding: 15px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--el-border-color-hover);
+  border-radius: 5px;
+  padding: 15px 20px 20px;
+  width: fit-content;
 
-    h2 {
-      margin-bottom: 5px;
-    }
+  h2 {
+    margin-bottom: 5px;
+  }
 }
 
 .slide-fade-enter-active {
@@ -152,5 +141,15 @@ onMounted(() => {
     box-shadow: 0 0 0 1px var(--el-border-color-hover) inset;
     background-color: rgb(0 0 0 / 50%);
   }
+}
+
+.full-width {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 0;
+  width: 100%;
+  align-items: center;
 }
 </style>

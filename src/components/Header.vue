@@ -41,7 +41,7 @@ watch(city, () => {
 
 <template>
     <header>
-        <div class="wrapper">
+        <div class="container">
             <nav>
                 <RouterLink v-for="(link, index) in navLinks" :key="index" :to="link.to">{{ link.name }}</RouterLink>
             </nav>
@@ -81,7 +81,7 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 
-	.wrapper {
+	.container {
 		display: flex;
     justify-content: center;
 	}
@@ -111,14 +111,14 @@ nav a.router-link-exact-active:hover {
 	position: absolute;
 	right: 20px;
 
-	&__wrapper {
+	&__container {
 		padding: 12px;
 		border: 1px solid var(--vt-c-indigo);
 		border-radius: 0;
 		background-color: inherit;
 	}
 
-	&__wrapper.is-focused {
+	&__container.is-focused {
 		box-shadow: 0 0 0 1px var(--el-border-color-hover) inset;
 	}
 
