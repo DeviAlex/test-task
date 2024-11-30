@@ -1,0 +1,20 @@
+@import './base.css';
+
+#app {
+  width: 100%;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  background-color: #000000e8;
+  color: var(--el-text-color-placeholder);
+}
+
+.page {
+  height: calc(100% - 80px);
+  place-items: center;
+  display: flex;
+  margin: auto;
+  width: fit-content;
+}
