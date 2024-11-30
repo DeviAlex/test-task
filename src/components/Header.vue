@@ -51,7 +51,6 @@ watch(city, () => {
 								:key="city.value"
 								:label="city.value"
 								:value="city.value"
-								:disabled="city.disabled"
 							/>
 						</el-select>
         </div>

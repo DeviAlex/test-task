@@ -40,6 +40,7 @@ export interface WeatherInfo {
     };
     main: Main;
     name: string;
+    visibility: number;
     weather: Weather[];
     wind: Wind;
 }
