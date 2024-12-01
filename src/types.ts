@@ -34,6 +34,10 @@ export interface Link {
     name: string;
 }
 
+export interface CityName {
+    value: string;
+}
+
 export interface WeatherInfo {
     clouds: {
         al: number

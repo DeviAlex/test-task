@@ -17,6 +17,10 @@ body {
   display: flex;
   margin: auto;
   width: fit-content;
+  @media (max-width: 1024px) {
+    height: calc(100% - 140px);
+    margin-top: 140px;
+  }
 }
 
 .weather-status {
@@ -28,6 +32,13 @@ body {
   transition: opacity 0.1s;  
   opacity: 1;
   margin-top: 200px;
+
+  @media (max-width: 1440px) {
+    margin-top: 100px;
+  }
+  @media (max-width: 1024px) {
+    margin-top: 0;
+  }
 }
 
 .wrapper.loading {

@@ -16,10 +16,28 @@ const links = ref([
     name: 'За неделю'
   },
 ])
+
+const cities = ref([
+  {
+    value: 'Москва',
+  },
+  {
+    value: 'Казань',
+  },
+  {
+    value: 'Новосибирск',
+  },
+  {
+    value: 'Сочи',
+  },
+	{
+    value: 'Урюпинск',
+  },
+])
 </script>
 
 <template>
-  <Header :nav-links="links"/>
+  <Header :nav-links="links" :cities="cities"/>
   <RouterView />
   <div
     v-if="loading.isLoading"

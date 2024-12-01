@@ -65,3 +65,11 @@ onMounted(() => {
     </div>
   </main>
 </template>
+
+<style scoped>
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 20px 0;    
+  }
+}
+</style>

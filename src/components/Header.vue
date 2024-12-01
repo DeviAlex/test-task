@@ -1,35 +1,22 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { Link } from '../types'
+import type { Link, CityName } from '../types'
 import { RouterLink } from 'vue-router'
 import { useStore } from '@/stores/info'
 
 const store = useStore()
 
 const city = ref('')
-const cities = [
-  {
-    value: 'Москва',
-  },
-  {
-    value: 'Казань',
-  },
-  {
-    value: 'Новосибирск',
-  },
-  {
-    value: 'Сочи',
-  },
-	{
-    value: 'Урюпинск',
-  },
-]
 
 interface Props {
 	/**
 	 * Ссылки для навигации
 	 */
 	navLinks: Link[]
+	/**
+	 * Список городов
+	 */
+	cities: CityName[]
 }
 
 const props = defineProps<Props>()
@@ -111,19 +98,42 @@ nav a.router-link-exact-active:hover {
 	position: absolute;
 	right: 20px;
 
-	&__container {
+	&__wrapper {
 		padding: 12px;
 		border: 1px solid var(--vt-c-indigo);
 		border-radius: 0;
 		background-color: inherit;
+		box-shadow: none;
 	}
 
-	&__container.is-focused {
+	&__wrapper.is-focused {
 		box-shadow: 0 0 0 1px var(--el-border-color-hover) inset;
 	}
 
 	&__placeholder {
 		color: var(--el-text-color-placeholder);
+	}
+}
+
+@media (max-width: 1024px) {
+	header {
+		position: fixed;
+    overflow: hidden;
+    z-index: 3;
+    width: 100%;
+		background-color: #181818;
+		border-bottom: 1px solid var(--vt-c-indigo);
+
+		.container {
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+
+			.el-select {
+				position: relative;
+				right: 0;
+			}
+		}
 	}
 }
 

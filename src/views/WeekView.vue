@@ -136,6 +136,7 @@ onMounted(() => {
 
 .card {
   cursor: pointer;
+  position: relative;
 
   &:hover {
     box-shadow: 0 0 0 1px var(--el-border-color-hover) inset;
@@ -151,5 +152,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   align-items: center;
+  z-index: 2;
+  background-color: #181818;
 }
 </style>

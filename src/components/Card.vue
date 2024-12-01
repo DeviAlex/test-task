@@ -15,6 +15,6 @@
   border: 1px solid var(--el-border-color-hover);
   border-radius: 5px;
   background-color: inherit;
-  min-width: 260px;
+  min-width: 268px;
 }
 </style>
